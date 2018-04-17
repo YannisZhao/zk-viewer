@@ -6,7 +6,7 @@
           <el-input type="string" clearable v-model="host.name" placeholder="请输入名称"></el-input>
         </el-form-item>
         <el-form-item label="地址" :label-width="inputWidth">
-          <el-input type="string" clearable v-model="host.address" placeholder="请输入地址"></el-input>
+          <el-input type="string" clearable v-model="host.address" placeholder="请输入地址" @keyup.enter.native="submitForm('form')"></el-input>
         </el-form-item>
       </el-form>
       <div slot="footer" class="dialog-footer">

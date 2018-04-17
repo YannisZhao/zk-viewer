@@ -6,12 +6,12 @@
       </el-breadcrumb>
     </el-row> 
     <el-row :gutter="15">
-      <el-col :xs="15" :sm="15" :md="15" lg="15">
+      <el-col :xs="15" :sm="15" :md="15" :lg="15">
         <el-input class="data-path" placeholder="" v-model="node.path" size="small" disabled>
           <template slot="prepend">Path</template>
         </el-input>
       </el-col>
-      <el-col :xs="5" :sm="5" :md="5" lg="5" :offset="4" style="margin-left:50px">
+      <el-col :xs="5" :sm="5" :md="5" :lg="5" :offset="4" style="margin-left:50px">
         <el-input placeholder="" v-model="node.version" size="small" disabled>
           <template slot="prepend">Version</template>
         </el-input>
