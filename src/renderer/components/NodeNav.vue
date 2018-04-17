@@ -191,11 +191,11 @@ export default {
       var vm = this;
 
       var fromBuffer = function(buffer) {
-        var low = buffer.readUInt32LE(0);
-        var high = buffer.readUInt32LE(4);
-        var date = FileTime.toDate({ low: low, high: high });
+        var timestamp = buffer.readUIntBE(0, 8);
+        var date = new Date(timestamp);
         return moment(date).format("YYYY-MM-DD HH:MM:SS:SSS");
       };
+
       var nodeInfo = {
         path: node.path === undefined ? "/" : node.path,
         data: node.data,

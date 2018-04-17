@@ -97,7 +97,7 @@ function createMenu() {
         },
         {
           label: 'View Github',
-          click() { require('electron').shell.openExternal('https://github.com') }
+          click() { require('electron').shell.openExternal('https://github.com/YannisZhao/zk-viewer') }
         }
       ]
     }

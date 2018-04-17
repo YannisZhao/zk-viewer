@@ -5,42 +5,42 @@
           <el-breadcrumb-item :key="breadcrumb" v-for="breadcrumb in breadcrumbs">{{breadcrumb}}</el-breadcrumb-item>
       </el-breadcrumb>
     </el-row> 
-    <el-row :gutter="15">
-      <el-col :xs="15" :sm="15" :md="15" :lg="15">
-        <el-input class="data-path" placeholder="" v-model="node.path" size="small" disabled>
+    <el-row :gutter="20">
+      <el-col :xs="17" :sm="17" :md="17" :lg="17">
+        <el-input placeholder="" v-model="node.path" size="small" disabled>
           <template slot="prepend">Path</template>
         </el-input>
       </el-col>
-      <el-col :xs="5" :sm="5" :md="5" :lg="5" :offset="4" style="margin-left:50px">
+      <el-col :xs="4" :sm="4" :md="4" :lg="4" :offset="1">
         <el-input placeholder="" v-model="node.version" size="small" disabled>
           <template slot="prepend">Version</template>
         </el-input>
       </el-col>
     </el-row>
     <el-row :gutter="5">
-      <el-col :sm="3" :md="3">
+      <el-col :sm="4" :md="4">
         <el-input placeholder="" v-model="node.czxid" size="small" disabled>
           <template slot="prepend">CZXID</template>
         </el-input>
       </el-col>
-      <el-col :sm="7" :md="7">
+      <el-col :sm="7" :md="7" style="padding-right:0">
         <el-input placeholder="" v-model="node.ctime" size="small" disabled>
           <template slot="prepend">CTIME</template>
         </el-input>
       </el-col>
-      <el-col :sm="3" :md="3">
+      <el-col :sm="4" :md="4">
         <el-input placeholder="" v-model="node.mzxid" size="small" disabled>
           <template slot="prepend">MZXID</template>
         </el-input>
       </el-col>
-      <el-col :sm="7" :md="7">
+      <el-col :sm="7" :md="7" style="padding-right:0">
         <el-input placeholder="" v-model="node.mtime" size="small" disabled>
           <template slot="prepend">MTIME</template>
         </el-input>
       </el-col>
     </el-row>
-    <el-row :gutter="10">
-      <el-col :sm="4" :md="4" style="padding-right:0">
+    <el-row :gutter="15">
+      <el-col :sm="5" :md="5" style="padding-right:0">
         <el-input placeholder="" v-model="node.cversion" size="small" disabled>
           <template slot="prepend">CVERSION</template>
         </el-input>
@@ -55,7 +55,7 @@
           <template slot="prepend">ACL</template>
         </el-input>
       </el-col>
-      <el-col :sm="5" :md="5">
+      <el-col :sm="5" :md="5" style="padding-right:0">
         <el-input placeholder="" v-model="node.ephemeralOwner" size="small" disabled>
           <template slot="prepend">ephemeralOwner</template>
         </el-input>
@@ -90,18 +90,6 @@
         <vue-html5-editor :content="log" :auto-height="false"></vue-html5-editor>
       </el-col>
     </el-row>
-    <!--<br><br><el-row>  
-      <button class="btn" @click="open('https://simulatedgreg.gitbooks.io/electron-vue/content/')">Read the Docs</button>
-    </el-row><br><br>
-    <el-row>  
-            <div>
-                <div class="title alt">Other Documentation</div>
-                <button class="btn alt" @click="open('https://electron.atom.io/docs/')">Electron</button>
-                <button class="btn alt" @click="open('https://vuejs.org/v2/guide/')">Vue.js</button>
-                <button class="btn alt" @click="openFile()">open</button>
-                <button class="btn alt" @click="openBaidu()">open baidu</button>
-            </div>
-    </el-row>-->  
   </div>   
 </template>
 
@@ -140,10 +128,6 @@ export default {
     },
     open(link) {
       this.$electron.shell.openExternal(link);
-    },
-    openFile() {},
-    openBaidu() {
-      window.open("https://baidu.com");
     }
   }
 };
@@ -171,10 +155,6 @@ export default {
   margin-bottom: 10px;
 }
 
-.content .data-path {
-  width: 500px;
-}
-
 .content .btn {
   font-size: 0.8em;
   cursor: pointer;
@@ -192,6 +172,10 @@ export default {
 .content .btn.alt {
   color: #42b983;
   background-color: transparent;
+}
+
+.vue-html5-editor{
+  margin-bottom:5px;
 }
 
 .vue-html5-editor>.content {

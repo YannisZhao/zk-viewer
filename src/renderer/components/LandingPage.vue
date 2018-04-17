@@ -108,6 +108,11 @@ main {
   height: 100%;
 }
 
+.el-tabs__item {
+  height: 30px;
+  line-height: 30px;
+}
+
 .el-tabs__header {
   margin: 0;
 }
